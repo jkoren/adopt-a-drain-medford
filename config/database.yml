@@ -1,18 +1,33 @@
-development: &DEVELOPMENT
+development:
   adapter: postgresql
-  user: <%= ENV['DB_USER'] || ENV['USER'] %>
+  encoding: unicode
   database: adopt_a_thing_development
-  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  pool: 5
+  username: jeffkorenstein
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: adopt_a_thing_test
+  pool: 5
+  username: jeffkorenstein
+
+# development: &DEVELOPMENT
+#   adapter: postgresql
+#   user: <%= ENV['DB_USER'] || ENV['USER'] %>
+#   database: adopt_a_thing_development
+#   host: <%= ENV['DB_HOST'] || 'localhost' %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *DEVELOPMENT
-  database: adopt_a_thing_test
 
-staging: # read from DATABASE_URL
-  adapter: postgresql
+# test:
+#   <<: *DEVELOPMENT
+#   database: adopt_a_thing_test
 
-production: # read from DATABASE_URL
-  adapter: postgresql
+# staging: # read from DATABASE_URL
+#   adapter: postgresql
+
+# production: # read from DATABASE_URL
+#   adapter: postgresql
