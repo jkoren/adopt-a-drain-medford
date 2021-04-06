@@ -12,6 +12,13 @@ test:
   pool: 5
   username: jeffkorenstein
 
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: adopt_a_thing_test
+  pool: 5
+  username: jeffkorenstein
+
 # development: &DEVELOPMENT
 #   adapter: postgresql
 #   user: <%= ENV['DB_USER'] || ENV['USER'] %>
